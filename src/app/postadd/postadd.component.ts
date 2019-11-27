@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HttpClientService, Ads } from '../http-client.service';
+import { HttpClientService, Ads, User } from '../http-client.service';
 
 @Component({
   selector: 'app-postadd',
@@ -15,6 +15,7 @@ descrip:string="";
 email:string="";
 phoneNo:string="";
 ad: Ads
+user:User[];
 
 
 
@@ -28,9 +29,15 @@ ad: Ads
 
   }
   postAds(){
-    this.ad =  new Ads("Housing",this.postTitle,this.Code,this.descrip,this.email,this.phoneNo)
+    this.ad =  new Ads(this.category,this.postTitle,this.Code,this.descrip,this.email,this.phoneNo)
     console.log(this.ad);
-    this.svc.postAds(this.ad).subscribe(data => {console.log("Success")});
+
+    // this.svc.postAds(this.ad).subscribe(data => {console.log("Success")});
+    sessionStorage.getItem("username");
+    
+    this.svc.userad("vk@dxc.com",this.ad).subscribe(data => console.log("success 2") );
+    
   }
+
 
 }

@@ -32,26 +32,25 @@
                 </div>
                 <!-- Advance Search -->
                 <div class="advance-search">
-                    <form action="#" (ngSubmit)="submit()">
-                        <div class="row">
-                            <!-- Store Search -->
-                            <div class="col-lg-6 col-md-12">
+                    <div class="row">
+                        <!-- Store Search -->
+                        <div class="col-lg-6 col-md-12">
 
-                                <div class="block d-flex">
-                                    <input name="category" [(ngModel)]="category" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search"
-                                        placeholder="Search by category">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12">
-                                <div class="block d-flex">
-                                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search"
-                                        placeholder="Search by product">
-                                    <!-- Search Button -->
-                                    <button type="submit" class="btn btn-main">SEARCH</button>
-                                </div>
+                            <div class="block d-flex">
+                                <input name="searchCategory" [(ngModel)]="searchCategory" type="text"
+                                    class="form-control mb-2 mr-sm-2 mb-sm-0" id="searchCategory"
+                                    placeholder="Search by category">
                             </div>
                         </div>
-                    </form>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="block d-flex">
+                                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="searchProduct" name="searchProduct"
+                                    placeholder="Search by product" [(ngModel)]="searchProduct">
+                                <!-- Search Button -->
+                                <button class="btn btn-primary" (click)="submit()">Search</button>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -122,7 +121,7 @@
                     <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                         <div class="category-block">
                             <div class="header">
-                                    <i class="fas fa-car"></i>
+                                <i class="fas fa-car"></i>
                                 <h4>Vehicles</h4>
                             </div>
                             <ul class="category-list">
