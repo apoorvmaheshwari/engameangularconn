@@ -1,0 +1,158 @@
+<app-navbar></app-navbar>
+<section class="hero-area bg-1 text-center overly">
+    <!-- Container Start -->
+    <div class="container "
+        style="background-image: url(https://media.gettyimages.com/photos/times-square-in-new-york-city-at-dusk-picture-id981808424?s=612x612); background-size: 100%;">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Header Contetnt -->
+                <div class="content-block">
+                    <h1 style="padding: 5px;">DXC Internal Advertisments </h1>
+                    <p>Join your colleagues who buy and sell from each other <br></p>
+                    <div class="short-popular-category-list text-center">
+                        <h2 style="color: white;">Popular Category</h2>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href=""><i class="fa fa-bed"></i> Homeing</a></li>
+                            <li class="list-inline-item">
+                                <a href=""><i class="fa fa-grav"></i>Acessories</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href=""><i class="fa fa-car"></i>Vehicles</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href=""><i class="fa fa-cutlery"></i>Property</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href=""><i class="fa fa-coffee"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Advance Search -->
+                <div class="advance-search">
+                    <form action="#" (ngSubmit)="submit()">
+                        <div class="row">
+                            <!-- Store Search -->
+                            <div class="col-lg-6 col-md-12">
+
+                                <div class="block d-flex">
+                                    <input name="category" [(ngModel)]="category" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search"
+                                        placeholder="Search by category">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="block d-flex">
+                                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search"
+                                        placeholder="Search by product">
+                                    <!-- Search Button -->
+                                    <button type="submit" class="btn btn-main">SEARCH</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Container End -->
+</section>
+<section class="popular-deals section bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>Recently Posted Advertisments</h2>
+                    <p>Advertisments from all categories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--==========================================
+=            All Category Section            =
+===========================================-->
+
+<section class=" section">
+    <!-- Container Start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section title -->
+                <div class="section-title">
+                    <h2>All Categories</h2>
+                    <p>Wide Variety of Products are posted. Check Out!</p>
+                </div>
+                <div class="row">
+                    <!-- Category list -->
+                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                        <div class="category-block">
+                            <div class="header">
+                                <i class="fa fa-home icon-bg-3"></i>
+                                <h4>Housing</h4>
+                            </div>
+                            <ul class="category-list">
+                                <li><a href="category.html">Roommate Wanted <span>93</span></a></li>
+                                <li><a href="category.html">Room Needed <span>233</span></a></li>
+                                <li><a href="category.html">Flats <span>183</span></a></li>
+                                <li><a href="category.html">PG<span>343</span></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- /Category List -->
+                    <!-- Category list -->
+                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                        <div class="category-block">
+                            <div class="header">
+                                <i class="fa fa-laptop icon-bg-1"></i>
+                                <h4>Accessories</h4>
+                            </div>
+                            <ul class="category-list">
+                                <li><a href="category.html">Laptop <span>393</span></a></li>
+                                <li><a href="category.html">Headphones <span>23</span></a></li>
+                                <li><a href="category.html">Mobile <span>13</span></a></li>
+                                <li><a href="category.html">Tablets<span>43</span></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- /Category List -->
+                    <!-- Category list -->
+                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                        <div class="category-block">
+                            <div class="header">
+                                    <i class="fas fa-car"></i>
+                                <h4>Vehicles</h4>
+                            </div>
+                            <ul class="category-list">
+                                <li><a href="category.html">Cars <span>93</span></a></li>
+                                <li><a href="category.html">Scooters <span>23</span></a></li>
+                                <li><a href="category.html">Cycle <span>83</span></a></li>
+                                <li><a href="category.html"> Bike<span>33</span></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- /Category List -->
+                    <!-- Category list -->
+                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                        <div class="category-block">
+                            <div class="header">
+                                <i class="fa fa-shopping-basket icon-bg-4"></i>
+                                <h4>Property</h4>
+                            </div>
+                            <ul class="category-list">
+                                <li><a href="category.html">Land <span>53</span></a></li>
+                                <li><a href="category.html">Apartment <span>212</span></a></li>
+                                <li><a href="category.html">Marriage Hall<span>133</span></a></li>
+                                <li><a href="category.html">Ground <span>143</span></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- /Category List -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container End -->
+</section>

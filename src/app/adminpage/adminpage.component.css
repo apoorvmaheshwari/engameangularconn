@@ -1,0 +1,14 @@
+.text{
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+.btn{
+    text-align: center;
+    width: 20%;  
+}
+
+.lead{
+    text-align: center;
+}

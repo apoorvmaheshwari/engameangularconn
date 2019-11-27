@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="jumbotron text">
+        <div class="container">
+          <h1 class="display-4">Welcome to Admin Page</h1>
+          <p class="lead">List of users with adds posted by them</p>
+        </div>
+    </div>
+<div class="container">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Adds</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+            <tbody *ngIf= "adds.length > 0">
+                <tr *ngFor= "let add of adds">
+                    <th scope="row">{{add.id}}</th>
+                    <td>{{add.user}}</td>
+                    <td>{{add.add}}</td>
+                    <td>{{add.time}}</td>
+                    <td>
+                    <a routerLink="view/{{add.id}}" href="http://localhost:4200/viewads" class="btn btn-sm btn-info">View</a>
+                   <a routerLink="delete/{{add.id}}" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+                </tr>  
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,15 @@
+.text{
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+.btn{
+    text-align: center;
+    width: 20%;  
+}
+
+.button{
+    padding: 0px 20px 20px 20px;
+    
+}

@@ -1,0 +1,20 @@
+body{
+    background-color: lightgray;
+    
+}
+h3{
+    text-align: center;
+}
+
+.container.coln{
+    border-top: 4px solid black;
+}
+
+.col-md-5.cont{
+    background-color: lightslategray; 
+    padding: 1%;
+}
+.col-md-5.offset-2.sig{
+    background-color: lightslategray; 
+    padding: 1%;
+}

@@ -1,0 +1,52 @@
+
+<h3>Welcome to DXC Reckoner Login/SignUp Page</h3><br>
+  <div class="container coln">
+      <div class ="row">
+          <div class="col-md-5 cont">
+              <form>
+                    <h5>Login</h5>
+                    <div class="form-group">
+                        <label for="exampleInputusername1">User Name</label>
+                        <input type="username" class="form-control" id="UserName1" aria-describedby="nameHelp" placeholder="UserName" value="Username" >
+                    </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email" value="email@dxc.com" >
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="Password1" placeholder="Password" >
+                  </div>
+                  
+                  <a class="btn btn-warning" id="login" href="http://localhost:4200/home" role="button"> Login</a>
+                </form>
+          </div>
+         <div class="col-md-5 offset-2 sig" >
+              <form>
+                      <h5>Sign Up</h5>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">User Name</label>
+                        <input type="name" class="form-control" name="Name1" [(ngModel)]="name" aria-describedby="nameHelp" placeholder="UserName" value="Username" >
+                        
+                       </div>
+                    <div class="form-group">
+                     <label for="exampleInputEmail1">Email address</label>
+                     <input type="email" class="form-control" name="Email1" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Enter email" value="email@dxc.com" >
+                    
+                    </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="Password1" [(ngModel)]="password" placeholder="Password" >
+                  </div>
+                 
+                  <div class="form-group">
+                          <label for="exampleInputPassword1">Phone no.</label>
+                          <input type="number" class="form-control" name="Phone1" [(ngModel)]="phone" placeholder="Phone Number" >
+                   </div>
+                  
+                   <button type="submit" (click)="createUser()" class=" btn btn-warning">Register</button>
+                </form>
+          </div>
+      </div>
+  </div>

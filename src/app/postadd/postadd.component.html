@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="jumbotron" style="color: red">
+    <h2 class="display-4">Post Your Advertisement Here</h2>
+    <p class="lead">Please Select the category of Advertisement that you want to post from the following list.</p>
+    <hr class="my-4">
+</div>
+<div class="container">
+    <h2 class="display-10">Select the category</h2>
+
+
+    <form>
+        <div class="form-group col-6">
+            <select   class="form-control">
+                <option>Select</option>
+                <option>Housing</option>
+                <option>Accessories</option>
+                <option>Vehicles</option>
+                <option>Properties</option>
+            </select>
+        </div>
+        
+
+        <div class="form-group col-6">
+            <label>Title</label>
+            <input type="text" name="postTitle" [(ngModel)]="postTitle" class="form-control" placeholder="Enter title">
+        </div>
+
+        <div class="form-group col-6">
+            <label>Code</label>
+            <input type="text" name="Code" [(ngModel)]="Code" class="form-control" placeholder="Enter Code">
+        </div>
+        <div class="form-group col-6">
+            <label>Description</label>
+            <textarea class="form-control" name="descrip" [(ngModel)]="descrip" id="exampleFormControlTextarea1"
+                rows="3"></textarea>
+        </div>
+        <div class="form-group col-6">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="email" placeholder="Enter email">
+
+        </div>
+
+        <div class="form-group col-6">
+            <label>PhoneNo</label>
+            <input type="text" class="form-control" name="phoneNo" [(ngModel)]="phoneNo" placeholder="Enter phoneNo">
+
+        </div>
+
+
+        <button type="submit" (click)="postAds()" class=" btn btn-warning">Submit</button>
+    </form>
+
+</div>
