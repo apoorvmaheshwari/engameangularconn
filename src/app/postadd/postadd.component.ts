@@ -16,6 +16,8 @@ email:string="";
 phoneNo:string="";
 ad: Ads
 user:User[];
+counter:number=1;
+id:string="";
 
 
 
@@ -29,14 +31,37 @@ user:User[];
 
   }
   postAds(){
-    this.ad =  new Ads(this.category,this.postTitle,this.Code,this.descrip,this.email,this.phoneNo)
-    console.log(this.ad);
-
-    // this.svc.postAds(this.ad).subscribe(data => {console.log("Success")});
     sessionStorage.getItem("username");
+    this.id=sessionStorage.getItem("username")+this.counter.toString();
+    this.svc.letsidUser(sessionStorage.getItem("username"),this.id).subscribe(data => {
+      this.resp(data);
+    });
+  }
+
+
+  //   this.ad =  new Ads(this.id,this.category,this.postTitle,this.Code,this.descrip,this.email,this.phoneNo)
+  //   console.log(this.ad);
+
+  //   // this.svc.postAds(this.ad).subscribe(data => {console.log("Success")});
+  //   sessionStorage.getItem("username");
+  //   console.log(sessionStorage.getItem("username"))
     
-    this.svc.userad("vk@dxc.com",this.ad).subscribe(data => console.log("success 2") );
+  //   this.svc.userad(sessionStorage.getItem("username"),this.ad).subscribe(data => console.log("success 2") );
     
+  // }
+  resp(data){
+    if(data==1){
+      this.counter++;
+      this.postAds();
+    }
+    else{
+      this.ad =  new Ads(this.id,this.category,this.postTitle,this.Code,this.descrip,this.email,this.phoneNo)
+      console.log(this.ad);
+      sessionStorage.getItem("username");
+      console.log(sessionStorage.getItem("username"));
+      this.svc.userad(sessionStorage.getItem("username"),this.ad).subscribe(data => console.log("success 2") );
+    
+    }
   }
 
 

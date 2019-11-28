@@ -9,6 +9,8 @@ import {LoginreguserComponent} from './loginreguser/loginreguser.component';
 import {AdminloginComponent} from './adminlogin/adminlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewadsComponent } from './viewads/viewads.component';
+import {AdminviewComponent} from './adminview/adminview.component';
+import {AddviewComponent} from './addview/addview.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'loginreguser', component: LoginreguserComponent },
   { path: 'adminlog', component: AdminloginComponent },
   { path: 'adminpage', component: AdminpageComponent },
-  { path:'viewads', component:ViewadsComponent}
+  { path:'viewads', component:ViewadsComponent},
+  {path:'adminview', component:AdminviewComponent},
+  {path:'adminaddview', component:AddviewComponent}
 ];
 
 @NgModule({

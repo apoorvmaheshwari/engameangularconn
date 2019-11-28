@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="jumbotron text">
+        <div class="container">
+          <h1 class="display-4">Welcome to Admin Page</h1>
+          <p class="lead">List of users with adds posted by them</p>
+        </div>
+    </div>
+<div class="container">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                
+                <th scope="col">Title</th>
+                <th scope="col">Category</th>
+                
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor= "let ad of ads">
+                
+                <th scope="row">{{ad.postTitle}}</th>
+                <th scope="row">{{ad.category}} | {{ad.id}}</th>
+                
+                <th scope="row">
+                <button type="button"  class="btn btn-sm btn-info" (click)="adview(ad.id)">View</button>
+               <a  class="btn btn-sm btn-danger"(click)="addelete(ad.id)">Delete</a>
+            </th>
+            </tr>  
+        </tbody>
+    </table>
+</div>

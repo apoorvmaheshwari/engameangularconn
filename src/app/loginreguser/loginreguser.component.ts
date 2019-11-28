@@ -22,6 +22,8 @@ export class LoginreguserComponent implements OnInit {
   user: User;
   Login: User;
   Log: User;
+  errorMessage:string;
+  loginForm:FormGroup;
 
   username: string = "";
   pass: string = "";
@@ -33,18 +35,29 @@ export class LoginreguserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.pattern('^[\\w-\\+]+(\\.[\\w]+)*@dxc.com')],
+      password: ['', Validators.required],
+     
+
+    });
     this.registerForm = this.formBuilder.group({
       email: ['', Validators.pattern('^[\\w-\\+]+(\\.[\\w]+)*@dxc.com')],
       password: ['', Validators.required],
+      name: ['', Validators.required],
+      phone: ['', Validators.required],
+
     });
   }
+  get f() { return this.registerForm.controls; }
+  get l() { return this.registerForm.controls; }
 
   createUser() {
     this.user = new User(this.name, this.password, this.email, this.phone, [])
     console.log(this.user);
     this.svc.createUser(this.user).subscribe(data => { console.log("Success") });
   }
-  get f() { return this.registerForm.controls; }
+  
 
   onSubmit() {
     this.submitted = true;
@@ -53,6 +66,8 @@ export class LoginreguserComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
+    
+   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
   }
   onReset() {
     this.submitted = false;
@@ -84,5 +99,3 @@ export class LoginreguserComponent implements OnInit {
   }
 
 }
-
-

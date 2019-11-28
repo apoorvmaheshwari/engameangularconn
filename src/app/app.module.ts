@@ -17,6 +17,8 @@ import { InitselectComponent } from './initselect/initselect.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { ViewadsComponent } from './viewads/viewads.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AdminviewComponent } from './adminview/adminview.component';
+import { AddviewComponent } from './addview/addview.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AdminloginComponent,
     InitselectComponent,
     AdminpageComponent,
-    ViewadsComponent
+    ViewadsComponent,
+    AdminviewComponent,
+    AddviewComponent
   ],
   imports: [
     BrowserModule,

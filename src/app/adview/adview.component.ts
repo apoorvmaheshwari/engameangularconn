@@ -12,7 +12,7 @@ export class AdviewComponent implements OnInit {
   typeAds:Ads[]
   category:string
   adds:Ads 
-  
+  id:string
      postTitle: string
      postCode: number
      descrip:string
@@ -33,12 +33,13 @@ export class AdviewComponent implements OnInit {
     console.log(title)
     this.ads.forEach(item=>{
       if(title==item.postTitle){
+        this.id=item.id
         this.postTitle=item.postTitle
         this.postCode=item.postCode
         this.descrip=item.descrip
         this.email=item.email
         this.phoneNo=item.phoneNo
-        this.adds=new Ads(this.category,this.postTitle,this.postCode,this.descrip,this.email,this.phoneNo)
+        this.adds=new Ads(this.id,this.category,this.postTitle,this.postCode,this.descrip,this.email,this.phoneNo)
         console.log(this.adds);
         
         localStorage.setItem("dataAccess", JSON.stringify(this.adds));
