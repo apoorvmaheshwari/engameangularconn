@@ -35,27 +35,45 @@ export class LoginreguserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.pattern('^[\\w-\\+]+(\\.[\\w]+)*@dxc.com')],
-      password: ['', Validators.required],
-     
-
-    });
+    
     this.registerForm = this.formBuilder.group({
-      email: ['', Validators.pattern('^[\\w-\\+]+(\\.[\\w]+)*@dxc.com')],
-      password: ['', Validators.required],
-      name: ['', Validators.required],
-      phone: ['', Validators.required],
+      'email': [ null ,Validators.pattern('^[\\w-\\+]+(\\.[\\w]+)*@dxc.com')],
+      'password': [null, Validators.required],
+      'name': [null,Validators.required],
+      'phone': [null,Validators.required],
 
     });
   }
   get f() { return this.registerForm.controls; }
-  get l() { return this.registerForm.controls; }
+  
 
   createUser() {
+    if(this.name==""){
+      alert('Name field cannot be empty')
+      this.route.navigate(['loginreguser'])
+    }
+    else if(this.email==""){
+      alert('Email field cannot be empty')
+      this.route.navigate(['loginreguser'])
+    }
+    else if(this.password==""){
+      alert('Password field cannot be empty')
+      this.route.navigate(['loginreguser'])
+    }
+    else if(this.phone==null){
+      alert('Contact field cannot be empty')
+      this.route.navigate(['loginreguser'])
+    }
+    
+    else{
     this.user = new User(this.name, this.password, this.email, this.phone, [])
+
     console.log(this.user);
-    this.svc.createUser(this.user).subscribe(data => { console.log("Success") });
+    this.svc.createUser(this.user).subscribe(data => { 
+      console.log("Success") 
+      this.route.navigate(['loginreguser'])
+  });
+}
   }
   
 

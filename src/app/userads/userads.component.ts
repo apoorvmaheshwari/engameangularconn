@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User, HttpClientService, Ads } from '../http-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userads',
@@ -15,9 +16,14 @@ public email: string
 public phone: number
 public ad: Ads[]
 
-  constructor(private httpClient:HttpClientService) { }
+  constructor(private httpClient:HttpClientService,private route: Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("username"))
+    if(sessionStorage.getItem("username")==null){
+      this.route.navigate(['/loginreguser'])
+
+    }
     this.username=sessionStorage.getItem("username")
     console.log(this.username)
     this.httpClient.getUserbyEmail(this.username).subscribe(response =>{

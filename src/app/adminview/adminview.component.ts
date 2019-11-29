@@ -13,6 +13,11 @@ export class AdminviewComponent implements OnInit {
   constructor(private svc: HttpClientService, private route: Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("usernameadmin"))
+    if(sessionStorage.getItem("usernameadmin")==null){
+      this.route.navigate(['/adminlog'])
+
+    }
     this.svc.getUser().subscribe(response => {
       this.user=response;
 

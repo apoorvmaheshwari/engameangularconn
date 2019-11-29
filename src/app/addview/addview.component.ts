@@ -21,6 +21,11 @@ export class AddviewComponent implements OnInit {
   constructor(private svc: HttpClientService, private route: Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("usernameadmin"))
+    if(sessionStorage.getItem("usernameadmin")==null){
+      this.route.navigate(['/adminlog'])
+
+    }
     this.svc.getAds().subscribe(response => {
       this.ads = response;
 

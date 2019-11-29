@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import{FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { HttpClientService, Ads, User } from '../http-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-postadd',
@@ -18,19 +19,49 @@ ad: Ads
 user:User[];
 counter:number=1;
 id:string="";
+postaddForm: FormGroup;
+submitted = false;
 
 
 
 
 
-  constructor(private svc: HttpClientService) { }
+
+  constructor(private svc: HttpClientService,private route: Router,private formBuilder:FormBuilder) { }
 
   ngOnInit() {
+    this.postaddForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      phoneNo: ['', Validators.required],
+      category: ['', Validators.required],
+      postTitle: ['', Validators.required],
+      Code: ['', Validators.required],
+    });
+
+    console.log(sessionStorage.getItem("username"))
+    if(sessionStorage.getItem("username")==null){
+      this.route.navigate(['/loginreguser'])
+
+    }
     
 
 
   }
+  get f() { return this.postaddForm.controls; }
+ 
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.postaddForm.invalid) {
+        return;
+    }
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.postaddForm.value, null, 4));
+  }
+
   postAds(){
+    
     sessionStorage.getItem("username");
     this.id=sessionStorage.getItem("username")+this.counter.toString();
     this.svc.letsidUser(sessionStorage.getItem("username"),this.id).subscribe(data => {

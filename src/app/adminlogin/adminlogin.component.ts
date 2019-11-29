@@ -32,8 +32,8 @@ export class AdminloginComponent implements OnInit {
   }
   resp(response: string) {
     if (response) {
-      sessionStorage.setItem("username", this.username)
-      console.log(sessionStorage.getItem("username"))
+      sessionStorage.setItem("usernameadmin", this.username)
+      console.log(sessionStorage.getItem("usernameadmin"))
       this.route.navigate(['/adminpage'])
     }else {
       alert('Enter correct Username Password!! :-(\n\n');

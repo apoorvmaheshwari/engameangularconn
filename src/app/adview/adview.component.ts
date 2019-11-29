@@ -21,6 +21,11 @@ export class AdviewComponent implements OnInit {
   constructor(private httpClient:HttpClientService, private route:Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("username"))
+    if(sessionStorage.getItem("username")==null){
+      this.route.navigate(['/loginreguser'])
+
+    }
     console.log('pritning local data...');
     
     this.ads=JSON.parse(localStorage.getItem("data"))

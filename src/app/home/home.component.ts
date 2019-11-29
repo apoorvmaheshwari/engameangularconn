@@ -16,6 +16,11 @@ export class HomeComponent implements OnInit {
   constructor(private httpClient: HttpClientService, private route: Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("username"))
+    if(sessionStorage.getItem("username")==null){
+      this.route.navigate(['/loginreguser'])
+
+    }
 
   }
 

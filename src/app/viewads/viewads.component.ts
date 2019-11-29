@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientService, Ads } from '../http-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewads',
@@ -11,9 +12,14 @@ export class ViewadsComponent implements OnInit {
   typeAds:Ads[]
   category:string
   adds:Ads 
-  constructor(private httpClient:HttpClientService) { }
+  constructor(private httpClient:HttpClientService,private route: Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("username"))
+    if(sessionStorage.getItem("username")==null){
+      this.route.navigate(['/loginreguser'])
+
+    }
     this.ads=JSON.parse(localStorage.getItem("dataAccess"))
     console.log(this.ads)
     // this.route.navigateByUrl("http://localhost:4200/viewads")
